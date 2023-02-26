@@ -4,11 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Hoppy Place</title>
-    <link rel="stylesheet" href="file.js">
+    <title>take a paws</title>
+    <link rel="stylesheet" href="file.css">
+
 </head>
+
 <body>
-    <h1>Hello</h1>
+    <div class = "header">
+    <h1>take a paws<img src = "images/pawprint.png"></h1>
+    </div>
+
+    <div class = "content">
+    
+
+    <p>time till break</p> <input type="number" id="myNumber">
+
+    <p>minutes</p>
+
+    <button onclick="myFunction()"><p>go!</p></button>
+    
+    <p id="days"></p>
+    <p id="hours"></p>
+    <p id="mins"></p>
+    <p id="secs"></p>
+    <h2 id="end"></h2>
+
+    <p id="demo"></p>
+    
+<script src = "file.js"></script>
+
+    <script>
+    var audio = new Audio('sweet-love-121561.mp3'); 
+    function myFunction() {
+
+
+    
+    function addMinutes(date, minutes){
+        date.setMinutes(date.getMinutes() + parseInt(minutes));
+        return date;
+    }
+    
+    var timerMinutes = document.getElementById("myNumber").value;
+    console.log(timerMinutes);
+    if (timerMinutes!= null && timerMinutes != "") {
+    const date = new Date();
+
+     if (timerMinutes!= "0") {
+    audio.pause(); 
+    }
+
+    
+    const hiDate = addMinutes(date, timerMinutes);
+    
+    var newDate = hiDate.getTime();
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+    var now = new Date().getTime();
+    
+    var timeleft = newDate - now;
+
+        
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+    // Result is output to the specific element
+    document.getElementById("hours").innerHTML = hours + "h " 
+    document.getElementById("mins").innerHTML = minutes + "m " 
+    document.getElementById("secs").innerHTML = seconds + "s " 
+        
+    // Display the message when countdown is over
+    console.log(timeleft)
+    if (timeleft <= 0) {
+        clearInterval(myfunc);
+        document.getElementById("hours").innerHTML = "" 
+        document.getElementById("mins").innerHTML = ""
+        document.getElementById("secs").innerHTML = ""
+        audio.play();
+        callRandExercise();
+    }
+    else if (timeleft != 0) {
+    audio.pause(); 
+    }
+
+    }, 1000);}
+} 
+    var excercises = ['jumpj',
+'pushups',
+'situps',
+'planks',
+'burpees',
+'squats'
+];
+function randomExcercise(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+    </script>
+
+    <div class = "options">
+    <table>
+        <tr>
+            <td id = "squats">squats</td>
+        </tr>
+        <tr>
+            <td id = "jumpj">jumping jacks</td>
+        </tr>
+        <tr>
+            <td id = "situps">sit ups</td>
+        </tr>
+        <tr>
+            <td id = "planks">plank</td>
+        </tr>
+        <tr>
+            <td id = "burpees">burpees</td>
+        </tr>
+        <tr>
+            <td id = "pushups">push ups</td>
+        </tr>
+    </table>
+    </div>
+
+    </div>
+
     
 </body>
 </html>

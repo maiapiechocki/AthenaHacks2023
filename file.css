@@ -1,0 +1,98 @@
+@font-face {
+    src: url('fonts/atwriter.ttf');
+    font-family: "atwriter";
+}
+
+p {
+    font-family: "atwriter", typewriter;
+    color: pink;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.header img {
+    width: 15px;
+    height: 15px;
+    margin-left: 2px;
+  }
+  
+  .header h1 {
+    color:pink;
+    font-size: 60px;
+    text-align: center;
+    font-family: "atwriter", typewriter;
+    position: relative;
+    font-weight: lighter;
+   
+  }
+
+
+.content {
+    
+    text-align: left;
+    width: 1250px;
+    margin-left: 170px;
+    margin-top: 50px;
+}
+
+button {
+    color: pink;
+    border-color: pink;
+    border-radius: 15px;
+
+}
+
+th {
+    border: 10px solid pink;
+    width: 148.75px;
+    text-align: center;
+    padding: 10px 0px;
+    color: pink;
+    font-family: "atwriter", typewriter;
+    border-radius: 25px;
+}
+
+td {
+    border: 10px solid pink;
+    width: 148.75px;
+    text-align: center;
+    padding: 10px 0px;
+    color: pink;
+    font-family: "atwriter", typewriter;
+    border-radius: 25px;
+    opacity: .5;
+}
+
+table {
+    color: pink;
+}
+
+
+body {
+    background-image:url('images/exercisegif.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+.options {
+    position: absolute;
+    left: 950px;
+    bottom: 80px;
+}
+
+.form {
+    position: absolute;
+    left: 60px;
+    top: 200px;
+}
+.form-col {
+    color: pink;
+}
+
+.form-row {
+    color:pink;
+}
+
+
